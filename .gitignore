@@ -1,0 +1,40 @@
+# === FICHIERS PERSONNELS & DOCUMENTS ===
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.odt
+*.ods
+*.txt
+*.rtf
+*.zip
+*.7z
+*.rar
+
+# === FICHIERS SENSIBLES ===
+/factures/
+/private/
+/confidentiel/
+/comptabilite/
+
+# === DÉPENDANCES OU FICHIERS COMPILES (si tu utilises npm ou autre) ===
+node_modules/
+dist/
+build/
+*.log
+
+# === PARAMÈTRES VS CODE ===
+.vscode/
+
+# === FICHIERS TEMPORAIRES / SYSTÈME ===
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# === AUTRES À AJUSTER SELON TES USAGES ===
+.env
+.env.*

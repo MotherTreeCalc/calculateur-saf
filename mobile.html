@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur SAF – Mother Tree</title>
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="entete-container">
+            <img src="assets/img/mother_tree_Grayscale2.svg" alt="Logo Mother Tree" class="logo-header" />
+            <div class="entete-titres">
+                <h1>Calculateur de savon SAF – <span>Mother Tree</span></h1>
+                <p class="sous-titre">Formule artisanale, naturelle et calibrée</p>
+            </div>
+            <img id="toggle-theme-icon" src="assets/img/icon-moon.svg" alt="Changer le thème" class="toggle-theme" role="button" tabindex="0">
+        </div>
+    </header>
+
+    <main>
+        <section id="parametres">
+            <h2>Paramètres de formulation</h2>
+            <form id="form-parametres">
+                <label for="poidsTotal">Poids total d'huiles (g)</label>
+                <input type="number" id="poidsTotal" name="poidsTotal" min="1" value="1000" required>
+
+                <label for="surgras">
+                    Taux de surgras (%)
+                    <span class="info-icon" title="Le surgras est la quantité d'huile non saponifiée restante dans le savon, bénéfique pour la peau.">ℹ️</span>
+                </label>
+                <input type="number" id="surgras" name="surgras" min="0" max="20" step="0.1" value="8" required>
+
+                <label for="ratioEau">
+                    Ratio eau/huiles
+                    <span class="info-icon" title="C'est le rapport entre l'eau et les huiles, influençant la trace et le temps de cure.">ℹ️</span>
+                </label>
+                <input type="number" id="ratioEau" name="ratioEau" step="0.01" min="0.2" max="0.5" value="0.35" required>
+            </form>
+            <button id="btn-reset">
+                <img src="assets/img/icone-reset.svg" alt="Réinitialiser" aria-hidden="true" />
+                Réinitialiser
+            </button>
+        </section>
+
+        <div class="onglets-recette">
+            <div class="onglets-titres">
+                <button data-tab="huiles" class="actif">Huiles</button>
+                <button data-tab="phase-aqueuse">Phase aqueuse</button>
+                <button data-tab="ajouts">Ajouts</button>
+                <button data-tab="resultats">Résultats</button>
+            </div>
+
+            <div class="onglets-contenu actif" id="onglet-huiles">
+                <section id="huiles">
+                    <h2>Huiles utilisées (max. 10)</h2>
+                    <div id="huiles-container"></div>
+                    <p id="erreurs" aria-live="polite" role="alert"></p>
+                </section>
+            </div>
+
+            <div class="onglets-contenu" id="onglet-phase-aqueuse">
+                <section id="phase-aqueuse">
+                </section>
+            </div>
+
+            <div class="onglets-contenu" id="onglet-ajouts">
+                <section id="ajouts-trace">
+                </section>
+            </div>
+
+            <div class="onglets-contenu" id="onglet-resultats">
+                <section id="resultats">
+                    <h2>Propriétés du savon</h2>
+                    <div id="proprietes-techniques"></div>
+                    <div id="conformite"></div>
+                    <div id="ratio-douce-dure"></div>
+                </section>
+                <section id="export">
+                    <h2>Exporter la recette</h2>
+                    <button id="btn-export-csv">
+                        <img src="assets/img/filetype-csv.svg" alt="Fichier CSV" aria-hidden="true" />
+                        CSV
+                    </button>
+                    <button id="btn-export-pdf">
+                        <img src="assets/img/icone-export.svg" alt="Exporter PDF" aria-hidden="true" />
+                        PDF
+                    </button>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mother Tree – Calculateur artisanal conçu avec soin</p>
+    </footer>
+
+    <script src="js/data_huiles.js"></script>
+    <script src="js/calculs.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/export.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

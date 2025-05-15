@@ -1,0 +1,52 @@
+{
+  "recettes": [
+    {
+      "nom": "Sève Lustrale",
+      "poidsTotal": 813,
+      "surgras": 8,
+      "ratioEau": 0.33,
+      "huiles": [
+        { "nom": "Huile de coco, 76°F", "pourcentage": 17 },
+        { "nom": "Huile de jojoba", "pourcentage": 8 },
+        { "nom": "Huile de chanvre", "pourcentage": 12 },
+        { "nom": "Huile d'olive", "pourcentage": 7 },
+        { "nom": "Beurre de cacao", "pourcentage": 10 },
+        { "nom": "Beurre de karité", "pourcentage": 15 },
+        { "nom": "Huile de ricin", "pourcentage": 10 },
+        { "nom": "Huile de tournesol à HO", "pourcentage": 12 },
+        { "nom": "Huile de son de riz", "pourcentage": 7 },
+        { "nom": "Huile de babassu", "pourcentage": 2 }
+      ]
+    },
+    {
+      "nom": "Écorce Sacrée V3",
+      "poidsTotal": 1000,
+      "surgras": 6,
+      "ratioEau": 0.35,
+      "huiles": [
+        { "nom": "Huile de coco, 76°F", "pourcentage": 18 },
+        { "nom": "Beurre de karité", "pourcentage": 25 },
+        { "nom": "Beurre de cacao", "pourcentage": 22 },
+        { "nom": "Huile de ricin", "pourcentage": 10 },
+        { "nom": "Huile de son de riz", "pourcentage": 10 },
+        { "nom": "Huile d'olive", "pourcentage": 15 }
+      ]
+    },
+    {
+      "nom": "Planta Derma",
+      "poidsTotal": 850,
+      "surgras": 7,
+      "ratioEau": 0.34,
+      "huiles": [
+        { "nom": "Huile d'olive", "pourcentage": 15 },
+        { "nom": "Beurre de karité", "pourcentage": 25 },
+        { "nom": "Huile de chanvre", "pourcentage": 10 },
+        { "nom": "Beurre de cacao", "pourcentage": 10 },
+        { "nom": "Huile de ricin", "pourcentage": 10 },
+        { "nom": "Huile de son de riz", "pourcentage": 10 },
+        { "nom": "Huile de tournesol à HO", "pourcentage": 10 },
+        { "nom": "Huile de babassu", "pourcentage": 10 }
+      ]
+    }
+  ]
+}

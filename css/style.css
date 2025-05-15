@@ -1,0 +1,670 @@
+/* === Thème Artisanal Mother Tree === */
+
+/* Thème clair (défaut) */
+:root,
+:root[data-theme="light"] {
+    --beige: #f5f1e6;
+    --vert-foret: #2e4639;
+    --terre: #8c6e53;
+    --accent: #a4b494;
+    --texte: #333;
+    --font-principale: 'Georgia', serif;
+    --font-secondaire: 'Helvetica Neue', sans-serif;
+    --header-footer-bg: var(--vert-foret);
+}
+
+/* Thème sombre */
+:root[data-theme="dark"] {
+    --beige: #2e2e26;
+    --vert-foret: #cfead6;
+    --terre: #d2b48c;
+    --accent: #bcd4b0;
+    --texte: #f0f0f0;
+    --header-footer-bg: #3a3f35;
+}
+
+body {
+    font-family: var(--font-principale);
+    margin: 0;
+    padding: 0;
+    background-color: var(--beige);
+    color: var(--texte);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--header-footer-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header .sous-titre {
+    font-family: var(--font-secondaire);
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: var(--vert-foret);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.3rem;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--texte);
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.5rem;
+    background-color: #f9f6f1; /* softer beige */
+    color: #222;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+:root[data-theme="dark"] input[type="number"],
+:root[data-theme="dark"] select {
+    background-color: #23231f; /* deeper dark */
+    color: #f5f5f5;
+    border-color: #8fc7a1; /* more saturated accent */
+}
+
+.info-icon {
+    margin-left: 0.4em;
+    cursor: help;
+    font-weight: bold;
+    color: var(--accent);
+    font-size: 0.9em;
+}
+
+:root[data-theme="dark"] .info-icon {
+    color: var(--terre);
+}
+
+#huiles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* 🌿 Style artisanal texturé pour huiles */
+.huile-item {
+    background-color: #fdfaf5;
+    border-left: 4px solid var(--accent);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+:root[data-theme="dark"] .huile-item {
+    background-color: #2e2e26;
+    border-left: 4px solid var(--accent);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+#resultats {
+    background-color: #f5f1e6;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    border: 1px solid var(--terre);
+}
+
+:root[data-theme="dark"] #resultats {
+    background-color: #37352f;
+}
+
+#proprietes-techniques,
+#conformite,
+#ratio-douce-dure {
+    margin-top: 1rem;
+}
+
+#erreurs {
+    color: red;
+    font-weight: bold;
+}
+
+button,
+.groupe-ajout button,
+#ajouter-huile {
+    transition: background 0.2s, color 0.2s;
+}
+
+:root[data-theme="dark"] button,
+:root[data-theme="dark"] .groupe-ajout button,
+:root[data-theme="dark"] #ajouter-huile {
+    background-color: #6fa38a;
+    color: #fff;
+    border: 1px solid #8fc7a1;
+}
+
+button:hover,
+.groupe-ajout button:hover,
+#ajouter-huile:hover {
+    background-color: var(--terre);
+    color: #fff;
+}
+
+:root[data-theme="dark"] button:hover,
+:root[data-theme="dark"] .groupe-ajout button:hover,
+:root[data-theme="dark"] #ajouter-huile:hover {
+    background-color: #bcd4b0;
+    color: #23231f;
+}
+
+button {
+    background-color: var(--vert-foret);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+}
+
+button img {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    filter: brightness(0) invert(1);
+}
+
+:root[data-theme="dark"] button {
+    background-color: #456b59;
+    color: #fff;
+    border: 1px solid #678a7a;
+}
+
+button:hover {
+    background-color: var(--accent);
+    color: #222;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 1rem;
+    background-color: var(--vert-foret);
+    color: white;
+}
+
+:root[data-theme="dark"] footer {
+    background-color: #3a3f35;
+}
+
+.barre-propriete {
+    margin: 1rem 0;
+}
+
+.barre-propriete label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-family: var(--font-secondaire);
+}
+
+.barre-externe {
+    position: relative;
+    height: 22px;
+    background-color: #f5f1e6;
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.valeur-barre {
+    height: 100%;
+    background-color: var(--vert-foret);
+    transition: width 0.5s ease;
+    opacity: 0.85;
+    border-radius: 10px 0 0 10px;
+}
+
+:root[data-theme="dark"] .valeur-barre {
+    background-color: #6fa38a;
+    opacity: 0.95;
+}
+
+.plage-ideale {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(176, 132, 80, 0.5);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+:root[data-theme="dark"] .plage-ideale {
+    background-color: rgba(255, 211, 144, 0.4);
+}
+
+.barre-externe::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 60%;
+    width: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* 🎨 Amélioration des champs input/select dans huiles */
+#huiles-container input[type="number"],
+#huiles-container select {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.6rem;
+    border: 1px solid var(--accent);
+    background-color: #fefcf9;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+#huiles-container input[type="number"]:focus,
+#huiles-container select:focus {
+    outline: none;
+    border-color: var(--vert-foret);
+    box-shadow: 0 0 0 2px rgba(46, 70, 57, 0.2);
+}
+
+:root[data-theme="dark"] #huiles-container input[type="number"],
+:root[data-theme="dark"] #huiles-container select {
+    background-color: #3c3c36;
+    color: #f0f0f0;
+    border-color: #777;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#huiles-container input[type="number"] {
+    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
+    height: 50px;
+    width: 80px;
+    border-radius: 0.6rem;
+    box-sizing: border-box;
+    background-color: #fefcf9;
+    border: 1px solid var(--accent);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    margin-top: 0.5rem;
+}
+
+:root[data-theme="dark"] #huiles-container input[type="number"] {
+    background-color: #3c3c36;
+    color: #f0f0f0;
+    border-color: #777;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 🌙 Position fixe du bouton thème dans le coin haut droit du header */
+#toggle-theme {
+    position: static;
+    margin-right: 1rem;
+    background-color: var(--vert-foret);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+}
+
+:root[data-theme="dark"] #toggle-theme {
+    background-color: #456b59;
+    color: white;
+    border: 1px solid #678a7a;
+}
+
+#btn-reset {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.entete-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+}
+
+.logo-header {
+    width: 256px;
+    filter: brightness(0) invert(1);
+    object-fit: contain;
+    margin: 0 auto 0 1rem;
+    display: block;
+}
+
+.entete-titres {
+    flex: 1;
+    text-align: center;
+}
+
+#ajouts {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #fdfaf5;
+    border-radius: 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.ajout-item {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ajout-item label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    flex: 1;
+    font-size: 0.95rem;
+}
+
+.ajout-item input,
+.ajout-item select {
+    flex: 1;
+    max-width: 100px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.note-ajout {
+    font-size: 0.9rem;
+    color: var(--texte);
+    opacity: 0.8;
+    margin-top: 1rem;
+}
+
+/* Couleur sable naturelle pour options */
+option.douce {
+    background-color: #f4ecd8;
+    color: #2e4639;
+}
+option.dure {
+    background-color: #e8dcc3;
+    color: #2e4639;
+}
+:root[data-theme="dark"] option.douce {
+    background-color: #3a3f35;
+    color: #bcd4b0;
+}
+:root[data-theme="dark"] option.dure {
+    background-color: #444034;
+    color: #bcd4b0;
+}
+
+/* 🌾 Couleurs sable pour les menus Tom Select */
+.ts-douce {
+    background-color: #f4ecd8 !important;
+    color: #2e4639 !important;
+}
+.ts-dure {
+    background-color: #e8dcc3 !important;
+    color: #2e4639 !important;
+}
+:root[data-theme="dark"] .ts-douce {
+    background-color: #3a3f35 !important;
+    color: #bcd4b0 !important;
+}
+:root[data-theme="dark"] .ts-dure {
+    background-color: #444034 !important;
+    color: #bcd4b0 !important;
+}
+
+.icon-theme {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    display: inline;
+}
+
+/* Mode clair actif */
+:root[data-theme="light"] .icon-dark {
+    display: inline;
+}
+:root[data-theme="light"] .icon-light {
+    display: none;
+}
+
+/* Mode sombre actif */
+:root[data-theme="dark"] .icon-dark {
+    display: none;
+}
+:root[data-theme="dark"] .icon-light {
+    display: inline;
+}
+
+.toggle-theme {
+    width: 36px;
+    height: 36px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Onglets Recette - Navigation entre blocs */
+.onglets-recette {
+    margin-top: 2rem;
+}
+
+.onglets-titres {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.onglets-titres button {
+    flex: 1;
+    padding: 0.6rem;
+    font-weight: bold;
+    border: 1px solid var(--accent);
+    background: var(--beige);
+    color: var(--texte);
+    border-radius: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.onglets-titres button.actif {
+    background: var(--vert-foret);
+    color: white;
+}
+
+.onglets-contenu {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.onglets-contenu.actif {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Délimitation des sections internes */
+.onglets-contenu section {
+    padding: 1.5rem;
+    background-color: #fdfaf5;
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+}
+
+:root[data-theme="dark"] .onglets-contenu section {
+    background-color: #2e2e26;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+/* Support adaptatif */
+@media screen and (max-width: 600px) {
+    .onglets-titres button {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+}
+
+/* === Bouton ajout huile === */
+#ajouter-huile {
+    display: block;
+    margin: 1rem auto;
+    background-color: var(--accent);
+    color: var(--texte);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#ajouter-huile:hover {
+    background-color: var(--terre);
+    color: white;
+}
+
+/* === Ajouts phase aqueuse === */
+.groupe-ajout {
+    background-color: var(--beige);
+    border: 1px solid var(--accent);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.groupe-ajout h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--vert-foret);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 0.3rem;
+}
+
+.ajout-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.groupe-ajout button {
+    margin-top: 1rem;
+    padding: 0.4rem 1rem;
+    font-weight: bold;
+    border: none;
+    background-color: var(--accent);
+    color: var(--texte);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+    .groupe-ajout {
+        background-color: #2e2e26;
+        border-color: #678a7a;
+    }
+    .groupe-ajout h3 {
+        color: #cfead6;
+        border-bottom: 1px solid #678a7a;
+    }
+    .ajout-item select,
+    .ajout-item input {
+        background-color: #444;
+        color: white;
+        border-color: #777;
+    }
+    .groupe-ajout button {
+        background-color: #678a7a;
+        color: white;
+    }
+}
+/* === Harmonisation visuelle des menus ajouts / huiles === */
+
+.menu-style,
+.ajout-item select,
+.ajout-item input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.6rem;
+    border: 1px solid var(--accent);
+    background-color: #fefcf9;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #222;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* Mise en valeur au focus */
+.menu-style:focus,
+.ajout-item select:focus,
+.ajout-item input:focus {
+    outline: none;
+    border-color: var(--vert-foret);
+    box-shadow: 0 0 0 2px rgba(46, 70, 57, 0.2);
+}
+
+/* Thème sombre - menus ajouts */
+:root[data-theme="dark"] .menu-style,
+:root[data-theme="dark"] .ajout-item select,
+:root[data-theme="dark"] .ajout-item input {
+    background-color: #3c3c36;
+    color: #f0f0f0;
+    border-color: #777;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Tom Select - contrôleur visuel harmonisé */
+.ts-wrapper.control-ajouts {
+    font-size: 1rem;
+    border-radius: 0.6rem;
+    background-color: #fdfaf5;
+    border: 1px solid var(--accent);
+    padding: 0.4rem 0.6rem;
+}
+
+:root[data-theme="dark"] .ts-wrapper.control-ajouts {
+    background-color: #3c3c36;
+    color: #f0f0f0;
+    border-color: #777;
+}
